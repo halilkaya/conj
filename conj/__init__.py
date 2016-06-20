@@ -85,3 +85,4 @@ class Conj(object):
                 if ll in self.SOFTENINGS[conjType]:
                     word = '%s%s' % (word[:-1], self.SOFTENINGS[conjType][ll])
                 return '%s%s%s%s' % (word, infix, suffix, lastLetter)
+        return word

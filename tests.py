@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+#-*- coding: UTF-8 -*-
+
 from unittest import TestCase, main
 from conj import Conj
 

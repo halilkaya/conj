@@ -5,7 +5,7 @@ HANDLER_SHORTCUTS = {
     'e': 'dative',
     'i': 'accusative',
     'de': 'adessive',
-    'den', 'ablative',
+    'den': 'ablative',
 }
 
 class Conj(object):

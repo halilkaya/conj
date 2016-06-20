@@ -76,5 +76,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ```
+[See Full License](https://github.com/halilkaya/conj/blob/master/LICENSE)
 
 [licence-badge]:http://img.shields.io/badge/licence-GPL-brightgreen.svg

@@ -3,13 +3,6 @@
 
 class Conj(object):
 
-    """
-    dative:     -e hâli (yönelme hâli)
-    accusative: -i hâli (belirtme hâli)
-    adessive:   -de hâli (bulunma hâli)
-    ablative:   -den hâli (ayrılma hâli)
-    """
-
     def __init__(self):
         self.VOWEL_LETTERS = [
             'a', 'e', 'ı', 'i', 'o', 'ö', 'u', 'ü'

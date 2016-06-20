@@ -28,7 +28,7 @@ class ConjugationTest(TestCase):
 
         conj = Conj()
         for case in cases:
-            self.assertEqual(conj.conjugate(case[0], case[2], 'dative'), case[1])
+            self.assertEqual(conj(case[0], case[2], 'dative'), case[1])
 
     def test_accusative(self):
         cases = [
@@ -53,7 +53,7 @@ class ConjugationTest(TestCase):
 
         conj = Conj()
         for case in cases:
-            self.assertEqual(conj.conjugate(case[0], case[2], 'accusative'), case[1])
+            self.assertEqual(conj(case[0], case[2], 'accusative'), case[1])
 
     def test_adessive(self):
         cases = [
@@ -77,7 +77,7 @@ class ConjugationTest(TestCase):
 
         conj = Conj()
         for case in cases:
-            self.assertEqual(conj.conjugate(case[0], case[2], 'adessive'), case[1])
+            self.assertEqual(conj(case[0], case[2], 'adessive'), case[1])
 
     def test_ablative(self):
         cases = [
@@ -101,7 +101,7 @@ class ConjugationTest(TestCase):
 
         conj = Conj()
         for case in cases:
-            self.assertEqual(conj.conjugate(case[0], case[2], 'ablative'), case[1])
+            self.assertEqual(conj(case[0], case[2], 'ablative'), case[1])
 
 if __name__ == '__main__':
     main()

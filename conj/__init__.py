@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 #-*- coding: UTF-8 -*-
 
+HANDLER_SHORTCUTS = {
+    'e': 'dative',
+    'i': 'accusative',
+    'de': 'adessive',
+    'den': 'ablative',
+}
+
 class Conj(object):
 
     def __init__(self):
@@ -67,6 +74,10 @@ class Conj(object):
             return self.VOWELS[conjType][lv]
 
     def conjugate(self, word, properName=False, conjType='dative'):
+        
+        if conjType in HANDLER_SHORTCUTS:
+            conjType = HANDLER_SHORTCUTS[conjType]
+        
         if not properName and word in self.EXCEPTIONS[conjType]:
             return self.EXCEPTIONS[conjType][word]
         ll = self.getLastLetter(word)

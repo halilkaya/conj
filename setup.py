@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='conj',
-      version='1.1',
+      version='1.2',
       description='Python conjugation module for Turkish',
       url='https://github.com/halilkaya/conj',
       author='Halil Kaya',

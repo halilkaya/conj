@@ -16,7 +16,7 @@ from conj import Conj
 conj = Conj()
 
 city = 'İstanbul'
-fromCity = conj.conjugate(city, True, 'ablative')
+fromCity = conj(city, True, 'ablative') # or 'den' instead of ablative as shortcut
 
 print(fromCity)
 # Output: İstanbul'dan
@@ -48,12 +48,12 @@ Conj.conjugate(word, properName=False, conjType='dative')
    - ablative
 
 ## Conjugation Types
-| conjType       | desc                       | example         |
-| -------------- | -------------------------- | --------------- |
-| dative         | -e hâli (yönelme hâli)     | İstanbul'a      |
-| accusative     | -i hâli (belirtme hâli)    | İstanbul'u      |
-| adessive       | -de hâli (bulunma hâli)    | İstanbul'da     |
-| ablative       | -den hâli (ayrılma hâli)   | İstanbul'dan    |
+| conjType       | shortcut   | desc                       | example         |
+| -------------- | ---------- | -------------------------- | --------------- |
+| dative         | e          | -e hâli (yönelme hâli)     | İstanbul'a      |
+| accusative     | i          | -i hâli (belirtme hâli)    | İstanbul'u      |
+| adessive       | de         | -de hâli (bulunma hâli)    | İstanbul'da     |
+| ablative       | den        | -den hâli (ayrılma hâli)   | İstanbul'dan    |
 
 ## Contributing
  - You can open an issue or send pull request about my faults.

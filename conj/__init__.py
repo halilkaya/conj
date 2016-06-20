@@ -86,3 +86,7 @@ class Conj(object):
                     word = '%s%s' % (word[:-1], self.SOFTENINGS[conjType][ll])
                 return '%s%s%s%s' % (word, infix, suffix, lastLetter)
         return word
+        
+    __call__ = conjugate
+
+conj = Conj()

@@ -2,7 +2,7 @@
 #-*- coding: UTF-8 -*-
 
 from unittest import TestCase, main
-from conj import Conj
+from conj import conj
 
 class ConjugationTest(TestCase):
 
@@ -26,7 +26,6 @@ class ConjugationTest(TestCase):
             ['O',       'O\'ya',      True]
         ]
 
-        conj = Conj()
         for case in cases:
             self.assertEqual(conj(case[0], case[2], 'dative'), case[1])
 
@@ -51,7 +50,6 @@ class ConjugationTest(TestCase):
             ['O',       'O\'yu',      True]
         ]
 
-        conj = Conj()
         for case in cases:
             self.assertEqual(conj(case[0], case[2], 'accusative'), case[1])
 
@@ -75,7 +73,6 @@ class ConjugationTest(TestCase):
             ['O',       'O\'da',       True]
         ]
 
-        conj = Conj()
         for case in cases:
             self.assertEqual(conj(case[0], case[2], 'adessive'), case[1])
 
@@ -99,9 +96,20 @@ class ConjugationTest(TestCase):
             ['O',       'O\'dan',       True]
         ]
 
-        conj = Conj()
         for case in cases:
             self.assertEqual(conj(case[0], case[2], 'ablative'), case[1])
+
+    def test_derivative(self):
+        cases = [
+            ['adana',   'Adanalı',      True],
+            ['ürgüp',   'Ürgüplü',      True],
+            ['bolu',    'Bolulu',       True],
+            ['izmir',   'İzmirli',      True],
+            ['ığdır',   'Iğdırlı',      True]
+        ]
+
+        for case in cases:
+            self.assertEqual(conj(case[0], case[2], 'derivative'), case[1])
 
 if __name__ == '__main__':
     main()

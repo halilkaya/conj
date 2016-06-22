@@ -32,9 +32,9 @@ $ python tests.py
 
 ## API Reference
 
-### `conjugate`
+### `conj`
 ```python
-Conj.conjugate(word, properName=False, conjType='dative')
+conj(word, properName=False, conjType='dative')
 ```
 
  - **word** *(String)*: Word you want to conjugate.
@@ -44,7 +44,7 @@ Conj.conjugate(word, properName=False, conjType='dative')
    - accusative
    - adessive
    - ablative
-   - belonging
+   - derivative
 
 ## Conjugation Types
 | conjType       | shortcut   | desc                       | example         |
@@ -53,7 +53,7 @@ Conj.conjugate(word, properName=False, conjType='dative')
 | accusative     | i          | -i hâli (belirtme hâli)    | İstanbul'u      |
 | adessive       | de         | -de hâli (bulunma hâli)    | İstanbul'da     |
 | ablative       | den        | -den hâli (ayrılma hâli)   | İstanbul'dan    |
-| belonging      | li         | -li eki (aidiyet)          | İstanbullu      |
+| derivative     | li         | -li hâli (köken)           | İstanbullu      |
 
 ## Contributing
  - You can open an issue or send pull request about my faults.

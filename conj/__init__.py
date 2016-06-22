@@ -11,7 +11,8 @@ VOWELS['ablative'] = {
     'a': 'a', 'e': 'e', 'ı': 'a', 'i': 'e',
     'o': 'a', 'ö': 'e', 'u': 'a', 'ü': 'e'
 }
-VOWELS['accusative'] = {
+VOWELS['accusative'] = \
+VOWELS['belonging'] = {
     'a': 'ı', 'e': 'i', 'ı': 'ı', 'i': 'i',
     'o': 'u', 'ö': 'ü', 'u': 'u', 'ü': 'ü'
 }
@@ -47,13 +48,15 @@ HANDLERS = {
     'dative':     ['y', '', '', ''],
     'accusative': ['y', '', '', ''],
     'adessive':   ['d', 'd', 't', ''],
-    'ablative':   ['d', 'd', 't', 'n']
+    'ablative':   ['d', 'd', 't', 'n'],
+    'belonging':  ['l', 'l', 'l', '']
 }
 HANDLER_SHORTCUTS = {
     'e': 'dative',
     'i': 'accusative',
     'de': 'adessive',
     'den': 'ablative',
+    'li': 'belonging'
 }
 
 class Conj(object):
@@ -71,27 +74,43 @@ class Conj(object):
         if lv:
             return VOWELS[conjType][lv]
 
+    def makeProperName(self, word):
+        if len(word) > 0:
+            return '%s%s' % (word[0].upper(), word[1:])
+
     def conjugate(self, word, properName=False, conjType='dative'):
         if conjType in HANDLER_SHORTCUTS:
             conjType = HANDLER_SHORTCUTS[conjType]
+
         if not properName and word in EXCEPTIONS[conjType]:
             return EXCEPTIONS[conjType][word]
+
         ll = self.getLastLetter(word)
         suffix = self.getSuffix(word, conjType)
+
         if suffix:
             if ll in VOWEL_LETTERS:
                 infix = HANDLERS[conjType][0]
-            elif ll in SOFTENINGS[conjType]:
-                infix = HANDLERS[conjType][2]
+            elif conjType in SOFTENINGS:
+                if ll in SOFTENINGS[conjType]:
+                    infix = HANDLERS[conjType][2]
             else:
                 infix = HANDLERS[conjType][1]
+
             lastLetter = HANDLERS[conjType][3]
+
             if properName:
-                return '%s\'%s%s%s' % (word, infix, suffix, lastLetter)
+                word = self.makeProperName(word)
+                apostrophe = ''
+                if conjType != 'belonging':
+                    apostrophe = '\''
+                return '%s%s%s%s%s' % (word, apostrophe, infix, suffix, lastLetter)
             else:
                 if ll in SOFTENINGS[conjType]:
                     word = '%s%s' % (word[:-1], SOFTENINGS[conjType][ll])
+
                 return '%s%s%s%s' % (word, infix, suffix, lastLetter)
+
         return word
 
     __call__ = conjugate

@@ -111,5 +111,16 @@ class ConjugationTest(TestCase):
         for case in cases:
             self.assertEqual(conj(case[0], case[2], 'derivative'), case[1])
 
+    def test_abesive(self):
+        cases = [
+            ['piton',   'pitonsuz',     False],
+            ['keten',   'ketensiz',     False],
+            ['adana',   'Adana\'sız',   True],
+            ['ürgüp',   'ürgüpsüz',     False]
+        ]
+
+        for case in cases:
+            self.assertEqual(conj(case[0], case[2], 'abesive'), case[1])
+
 if __name__ == '__main__':
     main()

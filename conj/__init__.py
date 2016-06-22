@@ -12,7 +12,7 @@ VOWELS['ablative'] = {
     'o': 'a', 'ö': 'e', 'u': 'a', 'ü': 'e'
 }
 VOWELS['accusative'] = \
-VOWELS['belonging'] = {
+VOWELS['derivative'] = {
     'a': 'ı', 'e': 'i', 'ı': 'ı', 'i': 'i',
     'o': 'u', 'ö': 'ü', 'u': 'u', 'ü': 'ü'
 }
@@ -40,6 +40,10 @@ EXCEPTIONS['adessive'] = {
 EXCEPTIONS['ablative'] = {
     'o': 'ondan'
 }
+UPPER_MAP = {
+    ord(u'ı'): u'I',
+    ord(u'i'): u'İ'
+}
 HANDLERS = {
     # 0: infix for words ending with a vowel
     # 1: infix for words ending with not a vowel
@@ -49,14 +53,14 @@ HANDLERS = {
     'accusative': ['y', '', '', ''],
     'adessive':   ['d', 'd', 't', ''],
     'ablative':   ['d', 'd', 't', 'n'],
-    'belonging':  ['l', 'l', 'l', '']
+    'derivative': ['l', 'l', 'l', '']
 }
 HANDLER_SHORTCUTS = {
     'e': 'dative',
     'i': 'accusative',
     'de': 'adessive',
     'den': 'ablative',
-    'li': 'belonging'
+    'li': 'derivative'
 }
 
 class Conj(object):
@@ -76,7 +80,7 @@ class Conj(object):
 
     def makeProperName(self, word):
         if len(word) > 0:
-            return '%s%s' % (word[0].upper(), word[1:])
+            return '%s%s' % (word[0].translate(UPPER_MAP).upper(), word[1:])
 
     def conjugate(self, word, properName=False, conjType='dative'):
         if conjType in HANDLER_SHORTCUTS:
@@ -91,9 +95,8 @@ class Conj(object):
         if suffix:
             if ll in VOWEL_LETTERS:
                 infix = HANDLERS[conjType][0]
-            elif conjType in SOFTENINGS:
-                if ll in SOFTENINGS[conjType]:
-                    infix = HANDLERS[conjType][2]
+            elif conjType in SOFTENINGS and ll in SOFTENINGS[conjType]:
+                infix = HANDLERS[conjType][2]
             else:
                 infix = HANDLERS[conjType][1]
 
@@ -102,7 +105,7 @@ class Conj(object):
             if properName:
                 word = self.makeProperName(word)
                 apostrophe = ''
-                if conjType != 'belonging':
+                if conjType != 'derivative':
                     apostrophe = '\''
                 return '%s%s%s%s%s' % (word, apostrophe, infix, suffix, lastLetter)
             else:

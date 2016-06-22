@@ -12,7 +12,8 @@ VOWELS['ablative'] = {
     'o': 'a', 'ö': 'e', 'u': 'a', 'ü': 'e'
 }
 VOWELS['accusative'] = \
-VOWELS['derivative'] = {
+VOWELS['derivative'] = \
+VOWELS['abesive'] = {
     'a': 'ı', 'e': 'i', 'ı': 'ı', 'i': 'i',
     'o': 'u', 'ö': 'ü', 'u': 'u', 'ü': 'ü'
 }
@@ -53,14 +54,16 @@ HANDLERS = {
     'accusative': ['y', '', '', ''],
     'adessive':   ['d', 'd', 't', ''],
     'ablative':   ['d', 'd', 't', 'n'],
-    'derivative': ['l', 'l', 'l', '']
+    'derivative': ['l', 'l', 'l', ''],
+    'abesive':    ['s', 's', 's', 'z']
 }
 HANDLER_SHORTCUTS = {
     'e': 'dative',
     'i': 'accusative',
     'de': 'adessive',
     'den': 'ablative',
-    'li': 'derivative'
+    'li': 'derivative',
+    'siz': 'abesive'
 }
 
 class Conj(object):
@@ -86,8 +89,10 @@ class Conj(object):
         if conjType in HANDLER_SHORTCUTS:
             conjType = HANDLER_SHORTCUTS[conjType]
 
-        if not properName and word in EXCEPTIONS[conjType]:
-            return EXCEPTIONS[conjType][word]
+        if not properName and \
+           conjType in EXCEPTIONS and \
+           word in EXCEPTIONS[conjType]:
+               return EXCEPTIONS[conjType][word]
 
         ll = self.getLastLetter(word)
         suffix = self.getSuffix(word, conjType)
@@ -109,7 +114,7 @@ class Conj(object):
                     apostrophe = '\''
                 return '%s%s%s%s%s' % (word, apostrophe, infix, suffix, lastLetter)
             else:
-                if ll in SOFTENINGS[conjType]:
+                if conjType in SOFTENINGS and ll in SOFTENINGS[conjType]:
                     word = '%s%s' % (word[:-1], SOFTENINGS[conjType][ll])
 
                 return '%s%s%s%s' % (word, infix, suffix, lastLetter)

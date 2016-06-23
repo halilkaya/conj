@@ -2,5 +2,11 @@ sudo: false
 language: python
 python:
   - "3.5"
-install: pip install conj
-script: python tests.py
+install:
+  - pip install conj
+  - pip install coveralls
+script:
+  - python tests.py
+  - coverage run tests.py
+after_success:
+  - coveralls

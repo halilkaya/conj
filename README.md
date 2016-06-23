@@ -74,7 +74,7 @@ conj(word, properName=False, conjType='dative')
 | derivative     | li         | -li hâli (köken)           | İstanbullu      |
 | abesive        | siz        | -siz hâli (gıyapta)        | İstanbul'suz    |
 | genitive       | in         | -in hâli (âidiyet, ilişki) | İstanbul'un     |
-| plural         | ler        | -çoğul hâl                 | İstanbul'lar    |
+| plural         | ler        | çoğul hâl                  | İstanbul'lar    |
 
 ## Contributors
  - [Halil Kaya](https://github.com/halilkaya)

@@ -14,11 +14,25 @@ $ pip install conj
 ```python
 from conj import conj
 
-city = 'İstanbul'
-fromCity = conj(city, True, 'den') # or 'ablative' instead of 'den'
+print(conj('İstanbul', True, 'den'))  # output: İstanbul'dan
+print(conj('Muş', True, 'de'))  # output: Muş'ta
 
-print(fromCity)
-# Output: İstanbul'dan
+# -----------------------------------------------------------
+
+import random
+title = "%(name)s %(punishment)s şoku"
+names = ['Guido', 'Merkel', 'Voyvoda']
+punishments = ['Hapis', 'Kazık']
+
+print title % {
+  "name": conj(random.choice(names), True, 'e'),
+  "punishment": random.choice(punishments)
+}
+
+# output: Guido'ya hapis şoku
+# output: Merkel'e hapis şoku
+# output: Voyvodo'ya kazık şoku
+
 ```
 
 ## Running Tests

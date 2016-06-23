@@ -107,3 +107,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 [See Full License](https://github.com/halilkaya/conj/blob/master/LICENSE)
 
 [licence-badge]:http://img.shields.io/badge/licence-GPL-brightgreen.svg
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/halilkaya/conj/badge.svg?style=beer-square)](https://beerpay.io/halilkaya/conj)  [![Beerpay](https://beerpay.io/img/badges/make-wish-square.svg)](https://beerpay.io/halilkaya/conj?focus=wish)

@@ -1,5 +1,6 @@
 # conj
 [![Build Status](https://travis-ci.org/halilkaya/conj.svg?branch=master)](https://travis-ci.org/halilkaya/conj)
+[![Coverage](coverage.svg)](Test Coverage)
 [![GPL Licence][licence-badge]](LICENSE)
 
 Python conjugation module for Turkish.

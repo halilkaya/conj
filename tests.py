@@ -162,5 +162,16 @@ class ConjugationTest(TestCase):
         for case in cases:
             self.assertEqual(conj(case[0], case[2], 'ler'), case[1])
 
+    def test_mastar(self):
+        cases = [
+            ['gez',     'gezmek',       False],
+            ['gör',     'görmek',       False],
+            ['uç',      'uçmak',        False],
+            ['koş',     'koşmak',       False]
+        ]
+
+        for case in cases:
+            self.assertEqual(conj(case[0], case[2], 'mek'), case[1])
+
 if __name__ == '__main__':
     main()

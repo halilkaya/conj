@@ -122,5 +122,30 @@ class ConjugationTest(TestCase):
         for case in cases:
             self.assertEqual(conj(case[0], case[2], 'abesive'), case[1])
 
+    def test_genitive(self):
+        cases = [
+            ['piton',   'pitonun',      False],
+            ['kriko',   'krikonun',     False],
+            ['keten',   'ketenin',      False],
+            ['kurdele', 'kurdelenin',   False],
+            ['burdur',  'Burdur\'un',   True],
+            ['izmir',   'İzmir\'in',    True],
+            ['Bolu',    'Bolu\'nun',    True],
+            ['gerede',  'Gerede\'nin',  True],
+            ['kulak',   'kulağın',      False],
+            ['kulak',   'Kulak\'ın',    True],
+            ['ben',     'benim',        False],
+            ['sen',     'senin',        False],
+            ['o',       'onun',         False],
+            ['biz',     'bizim',        False],
+            ['ben',     'Ben\'in',      True],
+            ['sen',     'Sen\'in',      True],
+            ['o',       'O\'nun',       True],
+            ['biz',     'Biz\'in',      True]
+        ]
+
+        for case in cases:
+            self.assertEqual(conj(case[0], case[2], 'genitive'), case[1])
+
 if __name__ == '__main__':
     main()

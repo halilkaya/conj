@@ -105,7 +105,7 @@ class Conj(object):
         if not properName and \
            conjType in EXCEPTIONS and \
            word in EXCEPTIONS[conjType]:
-               return EXCEPTIONS[conjType][word]
+            return EXCEPTIONS[conjType][word]
 
         ll = self.getLastLetter(word)
         suffix = self.getSuffix(word, conjType)

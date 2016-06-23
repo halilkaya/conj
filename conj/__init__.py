@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 #-*- coding: UTF-8 -*-
+from __future__ import unicode_literals
 
 VOWEL_LETTERS = [
     'a', 'e', 'ı', 'i', 'o', 'ö', 'u', 'ü'
@@ -52,7 +53,7 @@ EXCEPTIONS['plural'] = {
     'o': 'onlar'
 }
 UPPER_MAP = {
-    ord(u'i'): u'İ'
+    ord('i'): 'İ'
 }
 HANDLERS = {
     # 0: infix for words ending with a vowel

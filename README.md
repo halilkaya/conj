@@ -1,4 +1,5 @@
 # conj
+[![PyPI version](https://badge.fury.io/py/conj.svg)](https://badge.fury.io/py/conj)
 [![Build Status](https://travis-ci.org/halilkaya/conj.svg?branch=master)](https://travis-ci.org/halilkaya/conj)
 [![Coverage Status](https://coveralls.io/repos/github/halilkaya/conj/badge.svg?branch=master)](https://coveralls.io/github/halilkaya/conj?branch=master)
 [![GPL Licence][licence-badge]](LICENSE)

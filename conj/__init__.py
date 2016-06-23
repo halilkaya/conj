@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #-*- coding: UTF-8 -*-
 
 VOWEL_LETTERS = [
@@ -42,7 +42,6 @@ EXCEPTIONS['ablative'] = {
     'o': 'ondan'
 }
 UPPER_MAP = {
-    ord(u'ı'): u'I',
     ord(u'i'): u'İ'
 }
 HANDLERS = {
@@ -83,7 +82,7 @@ class Conj(object):
 
     def makeProperName(self, word):
         if len(word) > 0:
-            return '%s%s' % (word[0].translate(UPPER_MAP).upper(), word[1:])
+            return ''.join([word[0].translate(UPPER_MAP).upper(), word[1:]])
 
     def conjugate(self, word, properName=False, conjType='dative'):
         if conjType in HANDLER_SHORTCUTS:
@@ -109,15 +108,17 @@ class Conj(object):
 
             if properName:
                 word = self.makeProperName(word)
+
                 apostrophe = ''
                 if conjType != 'derivative':
                     apostrophe = '\''
-                return '%s%s%s%s%s' % (word, apostrophe, infix, suffix, lastLetter)
+
+                return ''.join([word, apostrophe, infix, suffix, lastLetter])
             else:
                 if conjType in SOFTENINGS and ll in SOFTENINGS[conjType]:
-                    word = '%s%s' % (word[:-1], SOFTENINGS[conjType][ll])
+                    word = ''.join([word[:-1], SOFTENINGS[conjType][ll]])
 
-                return '%s%s%s%s' % (word, infix, suffix, lastLetter)
+                return ''.join([word, infix, suffix, lastLetter])
 
         return word
 

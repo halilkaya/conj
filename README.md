@@ -37,6 +37,12 @@ print title % {
 
 ```
 
+## Supported Python Versions
+ - python 3
+ - python 2
+ - pypy3
+ - pypy
+ 
 ## Running Tests
 To run tests, you have to install **unittest** first:
 ```sh
@@ -81,11 +87,11 @@ conj(word, properName=False, conjType='dative')
 ## Contributors
  - [Halil Kaya](https://github.com/halilkaya)
  - [Fatih Erikli](https://github.com/fatiherikli)
+ - [Emin Mastizada](https://github.com/mastizada)
 
 ## Contributing
  - You can open an issue or send pull request about my faults.
  - You can add new conjugation types via sending pull request.
- - Python2.7 support
 
 ## License
 ```

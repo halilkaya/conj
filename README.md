@@ -62,6 +62,7 @@ conj(word, properName=False, conjType='dative')
    - derivative
    - abesive
    - genitive
+   - plural
 
 ## Conjugation Types
 | conjType       | shortcut   | desc                       | example         |
@@ -73,6 +74,7 @@ conj(word, properName=False, conjType='dative')
 | derivative     | li         | -li hâli (köken)           | İstanbullu      |
 | abesive        | siz        | -siz hâli (gıyapta)        | İstanbul'suz    |
 | genitive       | in         | -in hâli (âidiyet, ilişki) | İstanbul'un     |
+| plural         | ler        | -çoğul hâl                 | İstanbul'lar    |
 
 ## Contributors
  - [Halil Kaya](https://github.com/halilkaya)

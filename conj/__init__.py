@@ -29,7 +29,14 @@ SOFTENINGS['genitive'] = {
 }
 SOFTENINGS['adessive'] = \
 SOFTENINGS['ablative'] = {
-    'k': 'k'
+    'f': 'f',
+    's': 's',
+    't': 't',
+    'k': 'k',
+    'ç': 'ç',
+    'ş': 'ş',
+    'h': 'h',
+    'p': 'p'
 }
 EXCEPTIONS = {}
 EXCEPTIONS['dative'] = {

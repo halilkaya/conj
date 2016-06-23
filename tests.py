@@ -64,14 +64,21 @@ class ConjugationTest(TestCase):
             ['İzmir',   'İzmir\'de',   True],
             ['Bolu',    'Bolu\'da',    True],
             ['Gerede',  'Gerede\'de',  True],
-            ['kulak',   'kulakta',     False],
             ['Kulak',   'Kulak\'ta',   True],
             ['ben',     'bende',       False],
             ['sen',     'sende',       False],
             ['o',       'onda',        False],
             ['Ben',     'Ben\'de',     True],
             ['Sen',     'Sen\'de',     True],
-            ['O',       'O\'da',       True]
+            ['O',       'O\'da',       True],
+            ['tüf',     'tüfte',       False],
+            ['teras',   'terasta',     False],
+            ['bilet',   'bilette',     False],
+            ['kulak',   'kulakta',     False],
+            ['kulaç',   'kulaçta',     False],
+            ['savaş',   'savaşta',     False],
+            ['seyyah',  'seyyahta',    False],
+            ['top',     'topta',       False]
         ]
 
         for case in cases:
@@ -87,14 +94,21 @@ class ConjugationTest(TestCase):
             ['İzmir',   'İzmir\'den',   True],
             ['Bolu',    'Bolu\'dan',    True],
             ['Gerede',  'Gerede\'den',  True],
-            ['kulak',   'kulaktan',     False],
             ['Kulak',   'Kulak\'tan',   True],
             ['ben',     'benden',       False],
             ['sen',     'senden',       False],
             ['o',       'ondan',        False],
             ['Ben',     'Ben\'den',     True],
             ['Sen',     'Sen\'den',     True],
-            ['O',       'O\'dan',       True]
+            ['O',       'O\'dan',       True],
+            ['tüf',     'tüften',       False],
+            ['teras',   'terastan',     False],
+            ['bilet',   'biletten',     False],
+            ['kulak',   'kulaktan',     False],
+            ['kulaç',   'kulaçtan',     False],
+            ['savaş',   'savaştan',     False],
+            ['seyyah',  'seyyahtan',    False],
+            ['top',     'toptan',       False]
         ]
 
         for case in cases:

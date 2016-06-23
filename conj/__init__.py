@@ -9,7 +9,8 @@ VOWELS = {}
 VOWELS['dative'] = \
 VOWELS['adessive'] = \
 VOWELS['ablative'] = \
-VOWELS['plural'] = {
+VOWELS['plural'] = \
+VOWELS['mastar'] = {
     'a': 'a', 'e': 'e', 'ı': 'a', 'i': 'e',
     'o': 'a', 'ö': 'e', 'u': 'a', 'ü': 'e'
 }
@@ -67,7 +68,8 @@ HANDLERS = {
     'derivative': ['l', 'l', 'l', ''],
     'abesive':    ['s', 's', 's', 'z'],
     'genitive':   ['n', '', '', 'n'],
-    'plural':     ['l', 'l', '', 'r']
+    'plural':     ['l', 'l', '', 'r'],
+    'mastar':     ['m', 'm', '', 'k']
 }
 HANDLER_SHORTCUTS = {
     'e': 'dative',
@@ -77,7 +79,8 @@ HANDLER_SHORTCUTS = {
     'li': 'derivative',
     'siz': 'abesive',
     'in': 'genitive',
-    'ler': 'plural'
+    'ler': 'plural',
+    'mek': 'mastar'
 }
 
 class Conj(object):

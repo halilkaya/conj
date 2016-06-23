@@ -7,7 +7,8 @@ VOWEL_LETTERS = [
 VOWELS = {}
 VOWELS['dative'] = \
 VOWELS['adessive'] = \
-VOWELS['ablative'] = {
+VOWELS['ablative'] = \
+VOWELS['plural'] = {
     'a': 'a', 'e': 'e', 'ı': 'a', 'i': 'e',
     'o': 'a', 'ö': 'e', 'u': 'a', 'ü': 'e'
 }
@@ -47,6 +48,9 @@ EXCEPTIONS['genitive'] = {
     'ben': 'benim',
     'biz': 'bizim'
 }
+EXCEPTIONS['plural'] = {
+    'o': 'onlar'
+}
 UPPER_MAP = {
     ord(u'i'): u'İ'
 }
@@ -61,7 +65,8 @@ HANDLERS = {
     'ablative':   ['d', 'd', 't', 'n'],
     'derivative': ['l', 'l', 'l', ''],
     'abesive':    ['s', 's', 's', 'z'],
-    'genitive':   ['n', '', '', 'n']
+    'genitive':   ['n', '', '', 'n'],
+    'plural':     ['l', 'l', '', 'r']
 }
 HANDLER_SHORTCUTS = {
     'e': 'dative',
@@ -70,7 +75,8 @@ HANDLER_SHORTCUTS = {
     'den': 'ablative',
     'li': 'derivative',
     'siz': 'abesive',
-    'in': 'genitive'
+    'in': 'genitive',
+    'ler': 'plural'
 }
 
 class Conj(object):

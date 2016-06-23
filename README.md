@@ -60,6 +60,7 @@ conj(word, properName=False, conjType='dative')
 ## Contributing
  - You can open an issue or send pull request about my faults.
  - You can add new conjugation types via sending pull request.
+ - Python2.7 support
 
 ## License
 ```

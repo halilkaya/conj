@@ -148,5 +148,19 @@ class ConjugationTest(TestCase):
         for case in cases:
             self.assertEqual(conj(case[0], case[2], 'genitive'), case[1])
 
+    def test_plural(self):
+        cases = [
+            ['piton',   'pitonlar',     False],
+            ['keten',   'ketenler',     False],
+            ['burdur',  'Burdur\'lar',  True],
+            ['biz',     'bizler',       False],
+            ['siz',     'sizler',       False],
+            ['o',       'onlar',        False],
+            ['o',       'O\'lar',       True]
+        ]
+
+        for case in cases:
+            self.assertEqual(conj(case[0], case[2], 'ler'), case[1])
+
 if __name__ == '__main__':
     main()

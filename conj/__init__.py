@@ -13,13 +13,15 @@ VOWELS['ablative'] = {
 }
 VOWELS['accusative'] = \
 VOWELS['derivative'] = \
-VOWELS['abesive'] = {
+VOWELS['abesive'] = \
+VOWELS['genitive'] = {
     'a': 'ı', 'e': 'i', 'ı': 'ı', 'i': 'i',
     'o': 'u', 'ö': 'ü', 'u': 'u', 'ü': 'ü'
 }
 SOFTENINGS = {}
 SOFTENINGS['dative'] = \
-SOFTENINGS['accusative'] = {
+SOFTENINGS['accusative'] = \
+SOFTENINGS['genitive'] = {
     'k': 'ğ'
 }
 SOFTENINGS['adessive'] = \
@@ -41,6 +43,10 @@ EXCEPTIONS['adessive'] = {
 EXCEPTIONS['ablative'] = {
     'o': 'ondan'
 }
+EXCEPTIONS['genitive'] = {
+    'ben': 'benim',
+    'biz': 'bizim'
+}
 UPPER_MAP = {
     ord(u'i'): u'İ'
 }
@@ -54,7 +60,8 @@ HANDLERS = {
     'adessive':   ['d', 'd', 't', ''],
     'ablative':   ['d', 'd', 't', 'n'],
     'derivative': ['l', 'l', 'l', ''],
-    'abesive':    ['s', 's', 's', 'z']
+    'abesive':    ['s', 's', 's', 'z'],
+    'genitive':   ['n', '', '', 'n']
 }
 HANDLER_SHORTCUTS = {
     'e': 'dative',
@@ -62,7 +69,8 @@ HANDLER_SHORTCUTS = {
     'de': 'adessive',
     'den': 'ablative',
     'li': 'derivative',
-    'siz': 'abesive'
+    'siz': 'abesive',
+    'in': 'genitive'
 }
 
 class Conj(object):

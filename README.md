@@ -74,6 +74,10 @@ conj(word, properName=False, conjType='dative')
 | abesive        | siz        | -siz hâli (gıyapta)        | İstanbul'suz    |
 | genitive       | in         | -in hâli (âidiyet, ilişki) | İstanbul'un     |
 
+## Contributors
+ - [Halil Kaya](https://github.com/halilkaya)
+ - [Fatih Erikli](https://github.com/fatiherikli)
+
 ## Contributing
  - You can open an issue or send pull request about my faults.
  - You can add new conjugation types via sending pull request.

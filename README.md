@@ -46,6 +46,7 @@ conj(word, properName=False, conjType='dative')
    - ablative
    - derivative
    - abesive
+   - genitive
 
 ## Conjugation Types
 | conjType       | shortcut   | desc                       | example         |
@@ -56,6 +57,7 @@ conj(word, properName=False, conjType='dative')
 | ablative       | den        | -den hâli (ayrılma hâli)   | İstanbul'dan    |
 | derivative     | li         | -li hâli (köken)           | İstanbullu      |
 | abesive        | siz        | -siz hâli (gıyapta)        | İstanbul'suz    |
+| genitive       | in         | -in hâli (âidiyet, ilişki) | İstanbul'un     |
 
 ## Contributing
  - You can open an issue or send pull request about my faults.

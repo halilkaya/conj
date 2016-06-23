@@ -42,7 +42,7 @@ print title % {
  - python 2
  - pypy3
  - pypy
- 
+
 ## Running Tests
 To run tests, you have to install **unittest** first:
 ```sh
@@ -71,6 +71,7 @@ conj(word, properName=False, conjType='dative')
    - abesive
    - genitive
    - plural
+   - mastar
 
 ## Conjugation Types
 | conjType       | shortcut   | desc                       | example         |
@@ -83,6 +84,7 @@ conj(word, properName=False, conjType='dative')
 | abesive        | siz        | -siz hâli (gıyapta)        | İstanbul'suz    |
 | genitive       | in         | -in hâli (âidiyet, ilişki) | İstanbul'un     |
 | plural         | ler        | çoğul hâl                  | İstanbul'lar    |
+| mastar         | mek        | -mek, -mak (mastar eki)    | gezmek          |
 
 ## Contributors
  - [Halil Kaya](https://github.com/halilkaya)

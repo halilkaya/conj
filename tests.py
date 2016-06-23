@@ -47,11 +47,12 @@ class ConjugationTest(TestCase):
             ['o',       'onu',        False],
             ['Ben',     'Ben\'i',     True],
             ['Sen',     'Sen\'i',     True],
-            ['O',       'O\'yu',      True]
+            ['O',       'O\'yu',      True],
+            ['ptn',     'ptn',        False]
         ]
 
         for case in cases:
-            self.assertEqual(conj(case[0], case[2], 'accusative'), case[1])
+            self.assertEqual(conj(case[0], case[2], 'i'), case[1])
 
     def test_adessive(self):
         cases = [

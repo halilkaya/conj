@@ -57,34 +57,25 @@ $ python tests.py
 
 ### `conj`
 ```python
-conj(word, properName=False, conjType='dative')
+conj(word, properName=False, conjType='e')
 ```
 
  - **word** *(String)*: Word you want to conjugate.
  - **properName** *(Boolean)*: Determining if the word is a proper name to put apostrophe.
- - **conjType** *(String)*: Conjugation type:
-   - dative
-   - accusative
-   - adessive
-   - ablative
-   - derivative
-   - abesive
-   - genitive
-   - plural
-   - mastar
+ - **conjType** *(String)*: See the conjugation types table below.
 
 ## Conjugation Types
-| conjType       | shortcut   | desc                       | example         |
-| -------------- | ---------- | -------------------------- | --------------- |
-| dative         | e          | -e hâli (yönelme hâli)     | İstanbul'a      |
-| accusative     | i          | -i hâli (belirtme hâli)    | İstanbul'u      |
-| adessive       | de         | -de hâli (bulunma hâli)    | İstanbul'da     |
-| ablative       | den        | -den hâli (ayrılma hâli)   | İstanbul'dan    |
-| derivative     | li         | -li hâli (köken)           | İstanbullu      |
-| abesive        | siz        | -siz hâli (gıyapta)        | İstanbul'suz    |
-| genitive       | in         | -in hâli (âidiyet, ilişki) | İstanbul'un     |
-| plural         | ler        | çoğul hâl                  | İstanbul'lar    |
-| mastar         | mek        | -mek, -mak (mastar eki)    | gezmek          |
+| conjType   | desc                             | example         |
+| ---------- | -------------------------------- | --------------- |
+| e          | -e, -a (yönelme hâli)            | İstanbul'a      |
+| i          | -i, -ı, -ü, -u (belirtme hâli)   | İstanbul'u      |
+| de         | -de, -da (bulunma hâli)          | İstanbul'da     |
+| den        | -den, -dan (ayrılma hâli)        | İstanbul'dan    |
+| li         | -li, -lı (köken)                 | İstanbullu      |
+| siz        | -siz, -sız (gıyapta)             | İstanbul'suz    |
+| in         | -in, -ın (âidiyet, ilişki)       | İstanbul'un     |
+| ler        | -ler, -lar (çoğul hâl)           | atlar           |
+| mek        | -mek, -mak (mastar)              | gezmek          |
 
 ## Contributors
  - [Halil Kaya](https://github.com/halilkaya)

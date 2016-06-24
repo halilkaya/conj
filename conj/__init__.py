@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 VOWEL_LETTERS = [
-    'a', 'e', 'ı', 'i', 'o', 'ö', 'u', 'ü', 'û', 'â',
+    'a', 'e', 'ı', 'i', 'o', 'ö', 'u', 'ü', 'û', 'â'
 ]
 VOWELS = {}
 VOWELS['dative'] = \

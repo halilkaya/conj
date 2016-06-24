@@ -112,7 +112,7 @@ class Conj(object):
                 lv = 'ü'
             elif lv == 'â':
                 lv = 'a'
-            elif lv ==   'û':
+            elif lv == 'û':
                 lv = 'u'
 
             return VOWELS[conjType][lv]

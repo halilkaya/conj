@@ -51,6 +51,7 @@ class ConjugationTest(TestCase):
             ['O',       'O\'yu',      True],
             ['ptn',     'ptn',        False],
             ['usûl',    'usûlü',      False],
+            ['mahlûk',  'mahlûğu',    False],
         ]
 
         for case in cases:
@@ -82,6 +83,7 @@ class ConjugationTest(TestCase):
             ['seyyah',  'seyyahta',    False],
             ['top',     'topta',       False],
             ['usûl',    'usûlde',      False],
+            ['istikbâl','istikbâlde',  False],
         ]
 
         for case in cases:
@@ -138,6 +140,7 @@ class ConjugationTest(TestCase):
             ['adana',   'Adana\'sız',   True],
             ['ürgüp',   'ürgüpsüz',     False],
             ['usûl',    'usûlsüz',      False],
+            ['ahlâk',   'ahlâksız',     False],
         ]
 
         for case in cases:

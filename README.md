@@ -90,6 +90,7 @@ conj(word, properName=False, conjType='dative')
  - [Halil Kaya](https://github.com/halilkaya)
  - [Fatih Erikli](https://github.com/fatiherikli)
  - [Emin Mastizada](https://github.com/mastizada)
+ - [Cemal Eker](https://github.com/cemaleker)
 
 ## Contributing
  - You can open an issue or send pull request about my faults.

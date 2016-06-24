@@ -23,7 +23,8 @@ class ConjugationTest(TestCase):
             ['o',       'ona',        False],
             ['Ben',     'Ben\'e',     True],
             ['Sen',     'Sen\'e',     True],
-            ['O',       'O\'ya',      True]
+            ['O',       'O\'ya',      True],
+            ['usûl',    'usûle',      False],
         ]
 
         for case in cases:
@@ -48,7 +49,8 @@ class ConjugationTest(TestCase):
             ['Ben',     'Ben\'i',     True],
             ['Sen',     'Sen\'i',     True],
             ['O',       'O\'yu',      True],
-            ['ptn',     'ptn',        False]
+            ['ptn',     'ptn',        False],
+            ['usûl',    'usûlü',      False],
         ]
 
         for case in cases:
@@ -78,7 +80,8 @@ class ConjugationTest(TestCase):
             ['kulaç',   'kulaçta',     False],
             ['savaş',   'savaşta',     False],
             ['seyyah',  'seyyahta',    False],
-            ['top',     'topta',       False]
+            ['top',     'topta',       False],
+            ['usûl',    'usûlde',      False],
         ]
 
         for case in cases:
@@ -108,7 +111,8 @@ class ConjugationTest(TestCase):
             ['kulaç',   'kulaçtan',     False],
             ['savaş',   'savaştan',     False],
             ['seyyah',  'seyyahtan',    False],
-            ['top',     'toptan',       False]
+            ['top',     'toptan',       False],
+            ['usûl',    'usûlden',      False],
         ]
 
         for case in cases:
@@ -120,7 +124,8 @@ class ConjugationTest(TestCase):
             ['ürgüp',   'Ürgüplü',      True],
             ['bolu',    'Bolulu',       True],
             ['izmir',   'İzmirli',      True],
-            ['ığdır',   'Iğdırlı',      True]
+            ['ığdır',   'Iğdırlı',      True],
+            ['usûl',    'usûllü',       False],
         ]
 
         for case in cases:
@@ -131,7 +136,8 @@ class ConjugationTest(TestCase):
             ['piton',   'pitonsuz',     False],
             ['keten',   'ketensiz',     False],
             ['adana',   'Adana\'sız',   True],
-            ['ürgüp',   'ürgüpsüz',     False]
+            ['ürgüp',   'ürgüpsüz',     False],
+            ['usûl',    'usûlsüz',      False],
         ]
 
         for case in cases:
@@ -156,7 +162,8 @@ class ConjugationTest(TestCase):
             ['ben',     'Ben\'in',      True],
             ['sen',     'Sen\'in',      True],
             ['o',       'O\'nun',       True],
-            ['biz',     'Biz\'in',      True]
+            ['biz',     'Biz\'in',      True],
+            ['usûl',    'usûlün',       False],
         ]
 
         for case in cases:
@@ -170,7 +177,8 @@ class ConjugationTest(TestCase):
             ['biz',     'bizler',       False],
             ['siz',     'sizler',       False],
             ['o',       'onlar',        False],
-            ['o',       'O\'lar',       True]
+            ['o',       'O\'lar',       True],
+            ['usûl',    'usûller',      False],
         ]
 
         for case in cases:

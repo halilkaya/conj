@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 VOWEL_LETTERS = [
-    'a', 'e', 'ı', 'i', 'o', 'ö', 'u', 'ü'
+    'a', 'e', 'ı', 'i', 'o', 'ö', 'u', 'ü', 'û', 'â',
 ]
 VOWELS = {}
 VOWELS['dative'] = \
@@ -102,7 +102,19 @@ class Conj(object):
 
     def getSuffix(self, word, conjType):
         lv = self.getLastVowel(word)
+
         if lv:
+            ll = self.getLastLetter(word)
+
+            if ll == 'l' and lv == 'â':
+                lv = 'e'
+            elif ll == 'l' and lv == 'û':
+                lv = 'ü'
+            elif lv == 'â':
+                lv = 'a'
+            elif lv ==   'û':
+                lv = 'u'
+
             return VOWELS[conjType][lv]
 
     def makeProperName(self, word):

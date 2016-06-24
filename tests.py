@@ -6,7 +6,7 @@ from conj import conj
 
 class ConjugationTest(TestCase):
 
-    def test_dative(self):
+    def test_e(self):
         cases = [
             ['piton',   'pitona',     False],
             ['kriko',   'krikoya',    False],
@@ -28,9 +28,9 @@ class ConjugationTest(TestCase):
         ]
 
         for case in cases:
-            self.assertEqual(conj(case[0], case[2], 'dative'), case[1])
+            self.assertEqual(conj(case[0], case[2], 'e'), case[1])
 
-    def test_accusative(self):
+    def test_i(self):
         cases = [
             ['piton',   'pitonu',     False],
             ['kriko',   'krikoyu',    False],
@@ -57,7 +57,7 @@ class ConjugationTest(TestCase):
         for case in cases:
             self.assertEqual(conj(case[0], case[2], 'i'), case[1])
 
-    def test_adessive(self):
+    def test_de(self):
         cases = [
             ['piton',   'pitonda',     False],
             ['kriko',   'krikoda',     False],
@@ -87,9 +87,9 @@ class ConjugationTest(TestCase):
         ]
 
         for case in cases:
-            self.assertEqual(conj(case[0], case[2], 'adessive'), case[1])
+            self.assertEqual(conj(case[0], case[2], 'de'), case[1])
 
-    def test_ablative(self):
+    def test_den(self):
         cases = [
             ['piton',   'pitondan',     False],
             ['kriko',   'krikodan',     False],
@@ -118,9 +118,9 @@ class ConjugationTest(TestCase):
         ]
 
         for case in cases:
-            self.assertEqual(conj(case[0], case[2], 'ablative'), case[1])
+            self.assertEqual(conj(case[0], case[2], 'den'), case[1])
 
-    def test_derivative(self):
+    def test_li(self):
         cases = [
             ['adana',   'Adanalı',      True],
             ['ürgüp',   'Ürgüplü',      True],
@@ -131,9 +131,9 @@ class ConjugationTest(TestCase):
         ]
 
         for case in cases:
-            self.assertEqual(conj(case[0], case[2], 'derivative'), case[1])
+            self.assertEqual(conj(case[0], case[2], 'li'), case[1])
 
-    def test_abesive(self):
+    def test_siz(self):
         cases = [
             ['piton',   'pitonsuz',     False],
             ['keten',   'ketensiz',     False],
@@ -144,9 +144,9 @@ class ConjugationTest(TestCase):
         ]
 
         for case in cases:
-            self.assertEqual(conj(case[0], case[2], 'abesive'), case[1])
+            self.assertEqual(conj(case[0], case[2], 'siz'), case[1])
 
-    def test_genitive(self):
+    def test_in(self):
         cases = [
             ['piton',   'pitonun',      False],
             ['kriko',   'krikonun',     False],
@@ -170,9 +170,9 @@ class ConjugationTest(TestCase):
         ]
 
         for case in cases:
-            self.assertEqual(conj(case[0], case[2], 'genitive'), case[1])
+            self.assertEqual(conj(case[0], case[2], 'in'), case[1])
 
-    def test_plural(self):
+    def test_ler(self):
         cases = [
             ['piton',   'pitonlar',     False],
             ['keten',   'ketenler',     False],
@@ -187,7 +187,7 @@ class ConjugationTest(TestCase):
         for case in cases:
             self.assertEqual(conj(case[0], case[2], 'ler'), case[1])
 
-    def test_mastar(self):
+    def test_mek(self):
         cases = [
             ['gez',     'gezmek',       False],
             ['gör',     'görmek',       False],

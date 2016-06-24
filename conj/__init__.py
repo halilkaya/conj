@@ -2,33 +2,46 @@
 #-*- coding: UTF-8 -*-
 from __future__ import unicode_literals
 
+
 VOWEL_LETTERS = [
     'a', 'e', 'ı', 'i', 'o', 'ö', 'u', 'ü', 'û', 'â'
 ]
+
+
+# Vowels
+
 VOWELS = {}
-VOWELS['dative'] = \
-VOWELS['adessive'] = \
-VOWELS['ablative'] = \
-VOWELS['plural'] = \
-VOWELS['mastar'] = {
+
+VOWELS['e'] = \
+VOWELS['de'] = \
+VOWELS['den'] = \
+VOWELS['ler'] = \
+VOWELS['mek'] = {
     'a': 'a', 'e': 'e', 'ı': 'a', 'i': 'e',
     'o': 'a', 'ö': 'e', 'u': 'a', 'ü': 'e'
 }
-VOWELS['accusative'] = \
-VOWELS['derivative'] = \
-VOWELS['abesive'] = \
-VOWELS['genitive'] = {
+
+VOWELS['i'] = \
+VOWELS['li'] = \
+VOWELS['siz'] = \
+VOWELS['in'] = {
     'a': 'ı', 'e': 'i', 'ı': 'ı', 'i': 'i',
     'o': 'u', 'ö': 'ü', 'u': 'u', 'ü': 'ü'
 }
+
+
+# Softenings
+
 SOFTENINGS = {}
-SOFTENINGS['dative'] = \
-SOFTENINGS['accusative'] = \
-SOFTENINGS['genitive'] = {
+
+SOFTENINGS['e'] = \
+SOFTENINGS['i'] = \
+SOFTENINGS['in'] = {
     'k': 'ğ'
 }
-SOFTENINGS['adessive'] = \
-SOFTENINGS['ablative'] = {
+
+SOFTENINGS['de'] = \
+SOFTENINGS['den'] = {
     'f': 'f',
     's': 's',
     't': 't',
@@ -38,57 +51,62 @@ SOFTENINGS['ablative'] = {
     'h': 'h',
     'p': 'p'
 }
+
+
+# Exceptions
+
 EXCEPTIONS = {}
-EXCEPTIONS['dative'] = {
+
+EXCEPTIONS['e'] = {
     'ben': 'bana',
     'sen': 'sana',
     'o': 'ona'
 }
-EXCEPTIONS['accusative'] = {
+
+EXCEPTIONS['i'] = {
     'o': 'onu'
 }
-EXCEPTIONS['adessive'] = {
+
+EXCEPTIONS['de'] = {
     'o': 'onda'
 }
-EXCEPTIONS['ablative'] = {
+
+EXCEPTIONS['den'] = {
     'o': 'ondan'
 }
-EXCEPTIONS['genitive'] = {
+
+EXCEPTIONS['in'] = {
     'ben': 'benim',
     'biz': 'bizim'
 }
-EXCEPTIONS['plural'] = {
+
+EXCEPTIONS['ler'] = {
     'o': 'onlar'
 }
+
+
+# Handlers
+
 UPPER_MAP = {
     ord('i'): 'İ'
 }
+
 HANDLERS = {
     # 0: infix for words ending with a vowel
     # 1: infix for words ending with not a vowel
     # 2: infix if last letter in SOFTENINGS
     # 3: extra last letter if needed
-    'dative':     ['y', '', '', ''],
-    'accusative': ['y', '', '', ''],
-    'adessive':   ['d', 'd', 't', ''],
-    'ablative':   ['d', 'd', 't', 'n'],
-    'derivative': ['l', 'l', 'l', ''],
-    'abesive':    ['s', 's', 's', 'z'],
-    'genitive':   ['n', '', '', 'n'],
-    'plural':     ['l', 'l', '', 'r'],
-    'mastar':     ['m', 'm', '', 'k']
+    'e':    ['y', '', '', ''],
+    'i':    ['y', '', '', ''],
+    'de':   ['d', 'd', 't', ''],
+    'den':  ['d', 'd', 't', 'n'],
+    'li':   ['l', 'l', 'l', ''],
+    'siz':  ['s', 's', 's', 'z'],
+    'in':   ['n', '', '', 'n'],
+    'ler':  ['l', 'l', '', 'r'],
+    'mek':  ['m', 'm', '', 'k']
 }
-HANDLER_SHORTCUTS = {
-    'e': 'dative',
-    'i': 'accusative',
-    'de': 'adessive',
-    'den': 'ablative',
-    'li': 'derivative',
-    'siz': 'abesive',
-    'in': 'genitive',
-    'ler': 'plural',
-    'mek': 'mastar'
-}
+
 
 class Conj(object):
 
@@ -121,10 +139,7 @@ class Conj(object):
         if len(word) > 0:
             return ''.join([word[0].translate(UPPER_MAP).upper(), word[1:]])
 
-    def conjugate(self, word, properName=False, conjType='dative'):
-        if conjType in HANDLER_SHORTCUTS:
-            conjType = HANDLER_SHORTCUTS[conjType]
-
+    def conjugate(self, word, properName=False, conjType='e'):
         if not properName and \
            conjType in EXCEPTIONS and \
            word in EXCEPTIONS[conjType]:
@@ -147,7 +162,7 @@ class Conj(object):
                 word = self.makeProperName(word)
 
                 apostrophe = ''
-                if conjType != 'derivative':
+                if conjType != 'li':
                     apostrophe = '\''
 
                 return ''.join([word, apostrophe, infix, suffix, lastLetter])

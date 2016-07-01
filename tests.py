@@ -24,7 +24,12 @@ class ConjugationTest(TestCase):
             ['Ben',     'Ben\'e',     True],
             ['Sen',     'Sen\'e',     True],
             ['O',       'O\'ya',      True],
-            ['usûl',    'usûle',      False]
+            ['usûl',    'usûle',      False],
+            ['bir',     'bire',       False],
+            ['iki',     'ikiye',      False],
+            ['dört',    'dörde',      False],
+            ['altı',    'altıya',     False],
+            ['sıfır',   'sıfıra',     False]
         ]
 
         for case in cases:
@@ -51,7 +56,14 @@ class ConjugationTest(TestCase):
             ['O',       'O\'yu',      True],
             ['ptn',     'ptn',        False],
             ['usûl',    'usûlü',      False],
-            ['mahlûk',  'mahlûğu',    False]
+            ['mahlûk',  'mahlûğu',    False],
+            ['bir',     'biri',       False],
+            ['iki',     'ikiyi',      False],
+            ['üç',      'üçü',        False],
+            ['dört',    'dördü',      False],
+            ['altı',    'altıyı',     False],
+            ['dokuz',   'dokuzu',     False],
+            ['sıfır',   'sıfırı',     False]
         ]
 
         for case in cases:
@@ -83,7 +95,11 @@ class ConjugationTest(TestCase):
             ['seyyah',  'seyyahta',    False],
             ['top',     'topta',       False],
             ['usûl',    'usûlde',      False],
-            ['istikbâl','istikbâlde',  False]
+            ['istikbâl','istikbâlde',  False],
+            ['bir',     'birde',       False],
+            ['üç',      'üçte',        False],
+            ['kırk',    'kırkta',      False],
+            ['sıfır',   'sıfırda',     False]
         ]
 
         for case in cases:
@@ -114,7 +130,11 @@ class ConjugationTest(TestCase):
             ['savaş',   'savaştan',     False],
             ['seyyah',  'seyyahtan',    False],
             ['top',     'toptan',       False],
-            ['usûl',    'usûlden',      False]
+            ['usûl',    'usûlden',      False],
+            ['bir',     'birden',       False],
+            ['üç',      'üçten',        False],
+            ['kırk',    'kırktan',      False],
+            ['sıfır',   'sıfırdan',     False]
         ]
 
         for case in cases:

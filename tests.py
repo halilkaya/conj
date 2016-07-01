@@ -25,11 +25,10 @@ class ConjugationTest(TestCase):
             ['Sen',     'Sen\'e',     True],
             ['O',       'O\'ya',      True],
             ['usûl',    'usûle',      False],
-            ['bir',     'bire',       False],
-            ['iki',     'ikiye',      False],
-            ['dört',    'dörde',      False],
-            ['altı',    'altıya',     False],
-            ['sıfır',   'sıfıra',     False]
+            [1,         '1\'e',       False],
+            [2,         '2\'ye',      False],
+            [6,         '6\'ya',      False],
+            [0,         '0\'a',       False]
         ]
 
         for case in cases:
@@ -57,13 +56,12 @@ class ConjugationTest(TestCase):
             ['ptn',     'ptn',        False],
             ['usûl',    'usûlü',      False],
             ['mahlûk',  'mahlûğu',    False],
-            ['bir',     'biri',       False],
-            ['iki',     'ikiyi',      False],
-            ['üç',      'üçü',        False],
-            ['dört',    'dördü',      False],
-            ['altı',    'altıyı',     False],
-            ['dokuz',   'dokuzu',     False],
-            ['sıfır',   'sıfırı',     False]
+            [1,         '1\'i',       False],
+            [2,         '2\'yi',      False],
+            [3,         '3\'ü',       False],
+            [6,         '6\'yı',      False],
+            [9,         '9\'u',       False],
+            [0,         '0\'ı',       False]
         ]
 
         for case in cases:
@@ -96,10 +94,10 @@ class ConjugationTest(TestCase):
             ['top',     'topta',       False],
             ['usûl',    'usûlde',      False],
             ['istikbâl','istikbâlde',  False],
-            ['bir',     'birde',       False],
-            ['üç',      'üçte',        False],
-            ['kırk',    'kırkta',      False],
-            ['sıfır',   'sıfırda',     False]
+            [1,         '1\'de',       False],
+            [3,         '3\'te',       False],
+            [40,        '40\'ta',      False],
+            [0,         '0\'da',       False]
         ]
 
         for case in cases:
@@ -131,10 +129,10 @@ class ConjugationTest(TestCase):
             ['seyyah',  'seyyahtan',    False],
             ['top',     'toptan',       False],
             ['usûl',    'usûlden',      False],
-            ['bir',     'birden',       False],
-            ['üç',      'üçten',        False],
-            ['kırk',    'kırktan',      False],
-            ['sıfır',   'sıfırdan',     False]
+            [1,         '1\'den',       False],
+            [3,         '3\'ten',       False],
+            [40,        '40\'tan',      False],
+            [0,         '0\'dan',       False]
         ]
 
         for case in cases:

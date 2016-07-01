@@ -25,11 +25,30 @@ class ConjugationTest(TestCase):
             ['Sen',     'Sen\'e',     True],
             ['O',       'O\'ya',      True],
             ['usûl',    'usûle',      False],
+            [0,         '0\'a',       False],
             [1,         '1\'e',       False],
             [2,         '2\'ye',      False],
+            [3,         '3\'e',       False],
+            [4,         '4\'e',       False],
+            [5,         '5\'e',       False],
             [6,         '6\'ya',      False],
-            [0,         '0\'a',       False]
-        ]
+            [7,         '7\'ye',      False],
+            [8,         '8\'e',       False],
+            [9,         '9\'a',       False],
+            [10,        '10\'a',      False],
+            [20,        '20\'ye',     False],
+            [30,        '30\'a',      False],
+            [40,        '40\'a',      False],
+            [50,        '50\'ye',     False],
+            [60,        '60\'a',      False],
+            [70,        '70\'e',      False],
+            [80,        '80\'e',      False],
+            [90,        '90\'a',      False],
+            [100,       '100\'e',     False],
+            [1000,      '1000\'e',    False],
+            [1000000,   '1000000\'a', False],
+            [1000000000,'1000000000\'a',False]
+	]
 
         for case in cases:
             self.assertEqual(conj(case[0], case[2], 'e'), case[1])
@@ -56,13 +75,30 @@ class ConjugationTest(TestCase):
             ['ptn',     'ptn',        False],
             ['usûl',    'usûlü',      False],
             ['mahlûk',  'mahlûğu',    False],
+            [0,         '0\'ı',       False],
             [1,         '1\'i',       False],
             [2,         '2\'yi',      False],
             [3,         '3\'ü',       False],
+            [4,         '4\'ü',       False],
+            [5,         '5\'i',       False],
             [6,         '6\'yı',      False],
+            [7,         '7\'yi',      False],
+            [8,         '8\'i',       False],
             [9,         '9\'u',       False],
-            [0,         '0\'ı',       False]
-        ]
+            [10,        '10\'u',      False],
+            [20,        '20\'yi',     False],
+            [30,        '30\'u',      False],
+            [40,        '40\'ı',      False],
+            [50,        '50\'yi',     False],
+            [60,        '60\'ı',      False],
+            [70,        '70\'i',      False],
+            [80,        '80\'i',      False],
+            [90,        '90\'ı',      False],
+            [100,       '100\'ü',     False],
+            [1000,      '1000\'i',    False],
+            [1000000,   '1000000\'u', False],
+            [1000000000,'1000000000\'ı',False]
+	]
 
         for case in cases:
             self.assertEqual(conj(case[0], case[2], 'i'), case[1])
@@ -94,11 +130,30 @@ class ConjugationTest(TestCase):
             ['top',     'topta',       False],
             ['usûl',    'usûlde',      False],
             ['istikbâl','istikbâlde',  False],
+	    [0,         '0\'da',       False],
             [1,         '1\'de',       False],
+            [2,         '2\'de',       False],
             [3,         '3\'te',       False],
+            [4,         '4\'te',       False],
+            [5,         '5\'te',       False],
+            [6,         '6\'da',       False],
+            [7,         '7\'de',       False],
+            [8,         '8\'de',       False],
+            [9,         '9\'da',       False],
+            [10,        '10\'da',      False],
+            [20,        '20\'de',      False],
+            [30,        '30\'da',      False],
             [40,        '40\'ta',      False],
-            [0,         '0\'da',       False]
-        ]
+            [50,        '50\'de',      False],
+            [60,        '60\'ta',      False],
+            [70,        '70\'te',      False],
+            [80,        '80\'de',      False],
+            [90,        '90\'da',      False],
+            [100,       '100\'de',     False],
+            [1000,      '1000\'de',    False],
+            [1000000,   '1000000\'da', False],
+            [1000000000,'1000000000\'da',False]
+	]
 
         for case in cases:
             self.assertEqual(conj(case[0], case[2], 'de'), case[1])
@@ -129,10 +184,29 @@ class ConjugationTest(TestCase):
             ['seyyah',  'seyyahtan',    False],
             ['top',     'toptan',       False],
             ['usûl',    'usûlden',      False],
+            [0,         '0\'dan',       False],
             [1,         '1\'den',       False],
+            [2,         '2\'den',       False],
             [3,         '3\'ten',       False],
+            [4,         '4\'ten',       False],
+            [5,         '5\'ten',       False],
+            [6,         '6\'dan',       False],
+            [7,         '7\'den',       False],
+            [8,         '8\'den',       False],
+            [9,         '9\'dan',       False],
+            [10,        '10\'dan',      False],
+            [20,        '20\'den',      False],
+            [30,        '30\'dan',      False],
             [40,        '40\'tan',      False],
-            [0,         '0\'dan',       False]
+            [50,        '50\'den',      False],
+            [60,        '60\'tan',      False],
+            [70,        '70\'ten',      False],
+            [80,        '80\'den',      False],
+            [90,        '90\'dan',      False],
+            [100,       '100\'den',     False],
+            [1000,      '1000\'den',    False],
+            [1000000,   '1000000\'dan', False],
+            [1000000000,'1000000000\'dan',False]
         ]
 
         for case in cases:

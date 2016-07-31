@@ -171,7 +171,6 @@ class Conj(object):
             return ''.join([word[0].translate(UPPER_MAP).upper(), word[1:]])
 
     def conjNumber(self, word):
-        properName = True
         word = str(word)[::-1]
         if word[0] in NUMBERS:
             if word[0] != '0':
@@ -193,9 +192,13 @@ class Conj(object):
 
     def conjugate(self, word, properName=False, conjType='e'):
         word_as_number = None
-        if isinstance(word,int):
+        try:
+            word = int(word)
+            properName = True
             word_as_number = str(word)
             word = self.conjNumber(word)
+        except:
+            pass
 
         if not properName and \
            conjType in EXCEPTIONS and \

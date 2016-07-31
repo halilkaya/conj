@@ -176,9 +176,11 @@ class Conj(object):
         if word[0] in NUMBERS:
             if word[0] != '0':
                 word = NUMBERS.get(str(word[0]))
+                return word
             else:
                 if word[0] == '0' and word[1] != '0':
                     word = NUMBERS.get(str((word[:2])[::-1]))
+                    return word
                 elif word[0] == '0' and word[1] == '0':
                     zero_count = 0
                     for digit in word:
@@ -187,10 +189,13 @@ class Conj(object):
                         else:
                             break
                     word = NUMBERS['0' * zero_count]
+                    return word
 
     def conjugate(self, word, properName=False, conjType='e'):
+        word_as_number = None
         if isinstance(word,int):
-            return self.conjNumber(word)
+            word_as_number = str(word)
+            word = self.conjNumber(word)
 
         if not properName and \
            conjType in EXCEPTIONS and \
@@ -216,6 +221,9 @@ class Conj(object):
                 apostrophe = ''
                 if conjType != 'li':
                     apostrophe = '\''
+
+                if word_as_number:
+                    word = word_as_number
 
                 return ''.join([word, apostrophe, infix, suffix, lastLetter])
             else:

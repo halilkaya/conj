@@ -29,6 +29,37 @@ VOWELS['in'] = {
     'o': 'u', 'ö': 'ü', 'u': 'u', 'ü': 'ü'
 }
 
+#numbers
+
+NUMBERS = {'0': 'sıfır',
+    '1': 'bir',
+    '2': 'iki',
+    '3': 'üç',
+    '4':'dört',
+    '5': 'beş',
+    '6': 'altı',
+    '7': 'yedi',
+    '8': 'sekiz',
+    '9': 'dokuz',
+    '10': 'on',
+    '20': 'yirmi',
+    '30': 'otuz',
+    '40': 'kırk',
+    '50': 'elli',
+    '60': 'altmış',
+    '70': 'yetmiş',
+    '80': 'seksen',
+    '90': 'doksan',
+    '00': 'bin',
+    '000': 'bin',
+    '0000': 'bin',
+    '00000': 'bin',
+    '000000': 'milyon',
+    '0000000': 'milyon',
+    '00000000': 'milyon',
+    '000000000': 'milyar',
+    '0000000000': 'milyar',
+    '00000000000': 'milyar'}
 
 # Softenings
 
@@ -139,7 +170,28 @@ class Conj(object):
         if len(word) > 0:
             return ''.join([word[0].translate(UPPER_MAP).upper(), word[1:]])
 
+    def conjNumber(self, word):
+        properName = True
+        word = str(word)[::-1]
+        if word[0] in NUMBERS:
+            if word[0] != '0':
+                word = NUMBERS.get(str(word[0]))
+            else:
+                if word[0] == '0' and word[1] != '0':
+                    word = NUMBERS.get(str((word[:2])[::-1]))
+                elif word[0] == '0' and word[1] == '0':
+                    zero_count = 0
+                    for digit in word:
+                        if digit == '0':
+                            zero_count += 1
+                        else:
+                            break
+                    word = NUMBERS['0' * zero_count]
+
     def conjugate(self, word, properName=False, conjType='e'):
+        if isinstance(word,int):
+            return self.conjNumber(word)
+
         if not properName and \
            conjType in EXCEPTIONS and \
            word in EXCEPTIONS[conjType]:

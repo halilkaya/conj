@@ -230,8 +230,12 @@ class Conj(object):
 
                 return ''.join([word, apostrophe, infix, suffix, lastLetter])
             else:
+
                 if conjType in SOFTENINGS and ll in SOFTENINGS[conjType]:
                     word = ''.join([word[:-1], SOFTENINGS[conjType][ll]])
+
+                if word_as_number:
+                    word = word_as_number
 
                 return ''.join([word, infix, suffix, lastLetter])
 

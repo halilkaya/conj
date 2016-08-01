@@ -177,7 +177,7 @@ class Conj(object):
             properName = True
             word_as_number = str(word)
             word = self._conjugateNumber(word)
-        except:
+        except ValueError:
             pass
 
         if not properName and \

@@ -82,6 +82,7 @@ conj(word, properName=False, conjType='e')
  - [Fatih Erikli](https://github.com/fatiherikli)
  - [Emin Mastizada](https://github.com/mastizada)
  - [Cemal Eker](https://github.com/cemaleker)
+ - [Aybüke Özdemir](https://github.com/aybuke)
 
 ## Contributing
  - You can open an issue or send pull request about my faults.

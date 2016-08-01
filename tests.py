@@ -139,7 +139,7 @@ class ConjugationTest(TestCase):
             ['top',     'topta',       False],
             ['usûl',    'usûlde',      False],
             ['istikbâl','istikbâlde',  False],
-	    [0,         '0\'da',       False],
+            [0,         '0\'da',       False],
             [1,         '1\'de',       False],
             [2,         '2\'de',       False],
             [3,         '3\'te',       False],

@@ -127,10 +127,9 @@ class Conj(object):
         return word[-1].lower()
 
     def getLastVowel(self, word):
-        if isinstance(word, str):
-            for letter in reversed(word.lower()):
-                if letter in VOWEL_LETTERS:
-                    return letter
+        for letter in reversed(word.lower()):
+            if letter in VOWEL_LETTERS:
+                return letter
 
     def getSuffix(self, word, conjType):
         lv = self.getLastVowel(word)
@@ -211,12 +210,8 @@ class Conj(object):
 
                 return ''.join([word, apostrophe, infix, suffix, lastLetter])
             else:
-
                 if conjType in SOFTENINGS and ll in SOFTENINGS[conjType]:
                     word = ''.join([word[:-1], SOFTENINGS[conjType][ll]])
-
-                if word_as_number:
-                    word = word_as_number
 
                 return ''.join([word, infix, suffix, lastLetter])
 

@@ -52,7 +52,6 @@ class ConjugationTest(TestCase):
             [1234567890,'1234567890\'a', False],
             [12345678900, '12345678900\'e', False],
             ['123456789','123456789\'a', False]
-
 	]
 
         for case in cases:
@@ -166,7 +165,6 @@ class ConjugationTest(TestCase):
             [1234567890,'1234567890\'da', False],
             [12345678900, '12345678900\'de', False],
             ['123456789','123456789\'da', False]
-
 	]
 
         for case in cases:
